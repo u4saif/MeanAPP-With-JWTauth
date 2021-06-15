@@ -1,0 +1,16 @@
+<div class="card text-center m-3">
+    <div class="card-header">
+      <b>post</b>
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">{{cardData.title}}</h5>
+      <p class="card-text">{{cardData.discription}}</p>
+    </div>
+    <div class="card-footer text-muted">
+      On {{cardData.date | date}}
+      <a type="button" class="btn btn-danger" (click)="deletPost(cardData._id)">
+        <i class="fa fa-trash" aria-hidden="true"></i>
+      </a>
+     
+    
+  </div>

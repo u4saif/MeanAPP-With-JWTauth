@@ -1,0 +1,30 @@
+
+  <div class="container">
+    <form [formGroup]="form" class="form">
+      
+      <div class="card p-1 m-2">
+        <div class="col-md-3">
+          <label for="validationServer05" class="form-label">Username:</label>
+          <input type="text" formControlName="uname" class="form-control"  [ngClass]="{'is-invalid' : !form.get('uname').valid && form.get('uname').touched}" id="validationServer05" aria-describedby="validationServer05Feedback" required>
+          <div id="validationServer05Feedback" class="invalid-feedback">
+            Please provide a username.
+          </div>
+        </div>
+        
+        <div class="col-md-3">
+          <label for="validationServer05" class="form-label">Password:</label>
+          <input type="text" formControlName="password" class="form-control" [ngClass]="{'is-invalid' : !form.get('password').valid && form.get('password').touched}" id="validationServer05" aria-describedby="validationServer05Feedback" required>
+          <div id="validationServer05Feedback" class="invalid-feedback">
+            Please provide a password.
+          </div>
+        </div>
+        <button class="btn-success rounded-pill p-2 m-2" *ngIf="form.valid" (click)="login(form.value)"  >
+          Login
+        </button>
+        <button class="btn-danger rounded-pill p-2 m-2" (click)="clearAll()" >
+          Clear
+        </button>
+      </div>
+    </form>
+    
+  </div>

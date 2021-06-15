@@ -1,0 +1,33 @@
+<button class="btn-primary rounded-pill p-2 m-2" *ngIf="!formView" (click)="viewForm()" >
+    Add New Post
+</button>
+
+<div class="container" *ngIf="formView">
+    <form [formGroup]="form">
+     
+      <div class="card p-1 m-2">
+              <div class="col-md-3">
+                <label for="validationServer05" class="form-label">Title:</label>
+                <input type="text" formControlName="title" class="form-control"  [ngClass]="{'is-invalid' : !form.get('title').valid && form.get('title').touched}" id="validationServer05" aria-describedby="validationServer05Feedback" required>
+                <div id="validationServer05Feedback" class="invalid-feedback">
+                  Please provide a title.
+                </div>
+              </div>
+
+            <div class="col-md-3">
+              <label for="validationServer05" class="form-label">Discription:</label>
+              <input type="text" formControlName="discription" class="form-control" [ngClass]="{'is-invalid' : !form.get('discription').valid && form.get('discription').touched}" id="validationServer05" aria-describedby="validationServer05Feedback" required>
+              <div id="validationServer05Feedback" class="invalid-feedback">
+                Please provide a discription.
+              </div>
+            </div>
+    <button class="btn-success rounded-pill p-2 m-2" *ngIf="form.valid" (click)="addPost(form.value)"  >
+      save
+  </button>
+  <button class="btn-danger rounded-pill p-2 m-2" (click)="close()"  >
+    Cancel
+  </button>
+</div>
+</form>
+
+</div>

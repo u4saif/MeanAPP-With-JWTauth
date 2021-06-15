@@ -1,0 +1,27 @@
+.card{ background: rgb(255 255 255 / 51%);
+    box-shadow: 0 8px 32px 0 rgb(31 38 135 / 37%);
+    backdrop-filter: blur( 6px );
+    -webkit-backdrop-filter: blur( 4px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    max-width: 500px;
+}
+.container{
+    background-color: #f0fd7b;
+    height: 100vh;
+    padding-top: 5rem;
+}
+
+.form-label {
+    margin-bottom: .5rem;
+    font-size: larger;
+    font-weight: 600;
+    color: black;
+}
+
+@media (min-width: 768px){
+.col-md-3 {
+    flex: 0 0 auto;
+    width: 100%;
+}
+}
